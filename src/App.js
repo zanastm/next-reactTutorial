@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { FiSettings } from 'react-icons/fi';
+// eslint-disable-next-line import/no-unresolved
+import { TooltipComponent } from '@syncfusion/ej-react-popups';
+
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <div className="flex relative dark:bg-main-dark-bg">
+          <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+            <TooltipComponent content="Settings" position="Top">
+              <button type="button" className='text-3xl p-3 hover:drop-shadow-xl hover'>
+                <FiSettings />
+              </button>
+            </TooltipComponent>
+          </div>
+        </div>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
-
 export default App;
